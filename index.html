@@ -4,47 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('Timer_background.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: white;
-      text-align: center;
-    }
+  body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('Code the Sky - Hacking Timer.png') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #000;
+    text-align: center;
+  }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
 
-    .countdown {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 3rem;
-      font-weight: bold;
-      background: transparent; /* transparent background */
-      border: none; /* no border */
-      border-radius: 0;
-      box-shadow: none;
-      padding: 1rem 2rem;
-    }
+  .countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1rem 2rem;
+  color: #000;
 
-    .countdown div {
-      text-align: center;
-    }
+    /* moves the timer slightly down */
+    transform: translateY(60px);
+  }
 
-    .label {
-      font-size: 1rem;
-      color: #ccc;
-      display: block;
-      margin-top: 0.5rem;
-    }
-  </style>
+  .countdown div {
+    text-align: center;
+  }
+
+  .label {
+    font-size: 1rem;
+    color: #000;
+    display: block;
+    margin-top: 0.5rem;
+  }
+</style>
 </head>
 <body>
   <h1> </h1>
