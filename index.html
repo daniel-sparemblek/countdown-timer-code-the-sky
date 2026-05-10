@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('Timer_background.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 3rem;
+      font-weight: bold;
+      background: transparent; /* transparent background */
+      border: none; /* no border */
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1rem 2rem;
+    }
+
+    .countdown div {
+      text-align: center;
+    }
+
+    .label {
+      font-size: 1rem;
+      color: #ccc;
+      display: block;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1> </h1>
+<h1> </h1>
+  <div class="countdown" id="countdown">
+    <div><span id="hours">0</span><span class="label">Hours</span></div>
+    <div><span id="minutes">0</span><span class="label">Minutes</span></div>
+    <div><span id="seconds">0</span><span class="label">Seconds</span></div>
+  </div>
+
+  <script>
+    // Set the target date/time
+    const targetDate = new Date("May 11, 2026 15:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "Hacking has finished!";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        + Math.floor(distance / (1000 * 60 * 60 * 24)) * 24; // total hours including days
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }, 1000);
+  </script>
+</body>
+</html>
